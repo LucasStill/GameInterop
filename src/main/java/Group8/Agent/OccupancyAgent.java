@@ -70,6 +70,18 @@ public class OccupancyAgent implements Guard {
         return;
     }
 
+
+    /**
+     * This action is called by another agent, agent B, upon accessing a communication point made by agent A.
+     * Agent B verifies false positive rate that of agent A's occupancyGrid.
+     *
+     * THIS SERVES AS DATA ANALYSIS FOR PHASE 3, TO SEE IF THERE ARE ANY POINTS OF IMPROVEMENTS!
+     * !DO NOT CALL METHOD IN FINAL SUBMISSION, OR ELSE AGENT IS EVEN SLOWER!
+     */
+    public void verify() {
+
+    }
+
     @Override
     public GuardAction getAction(GuardPercepts percepts) {
         return null;
