@@ -1,4 +1,4 @@
-package Group8.Agent;
+package Group8.agent;
 
 import Interop.Agent.Guard;
 import Interop.Agent.Intruder;

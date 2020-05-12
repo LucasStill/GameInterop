@@ -1,16 +1,8 @@
-package Group8.Agent;
+package Group8.agent;
 
 import Interop.Action.GuardAction;
 import Interop.Agent.Guard;
 import Interop.Percept.GuardPercepts;
-import Interop.Percept.Sound.SoundPercept;
-import Interop.Percept.Sound.SoundPerceptType;
-import Interop.Percept.Sound.SoundPercepts;
-import Interop.Percept.Vision.FieldOfView;
-import Interop.Percept.Vision.VisionPrecepts;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Thomas Sijpkens

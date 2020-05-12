@@ -1,4 +1,4 @@
-package Group8.Agent;
+package Group8.agent;
 
 /**
  * class HugAgent is an agent configured from G. Aguilar paper which uses the Reciprocal Velocity Obstacle approach of traversing an environment.
