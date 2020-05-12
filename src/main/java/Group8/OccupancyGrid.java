@@ -13,13 +13,17 @@ public class OccupancyGrid {
     //TODO: modify beta on how wide the FieldOfView is.
     private double z_max = 150.0; //how much info could be stored from the laser
 
-    //Pre-allocate the x and y position of all the grid position on a 2D (might be 3D from the literature) tensor.  (Pre-process = faster)
+    //Pre-allocate the x and y position of all the grid position on a 2D array.  (Pre-process = faster)
     //TODO: copy x and y position into grid_position_m
     private ArrayList<Double> grid_position_m;
 
     //Log-probabilities to add or remove from the map
     private double log_occ = Math.log(0.65/0.35);
     private double log_free = Math.log(0.35/0.65);
+
+    //OccupancyGrid to be updated by the agent.
+    ArrayList<ArrayList<Boolean>> occupancyGrid = new ArrayList<ArrayList<Boolean>>();
+
 
     /**
      * There are only 4 conditional probabilities.
@@ -55,6 +59,17 @@ public class OccupancyGrid {
      *  Recursively update p(Mx,My) for each cell
      */
     public void OccupancyGridMap() {
+
+    }
+
+    /**
+     * Updates the occupancy grid based on OccupancyAgent calculation.
+     * This is called upon from the OccupancyAgent.
+     * @param index the Arraylist index where the agent makes an update to.
+     * @param occValue index set true if grid is occupied, else false.
+     */
+    public void update(int index, Boolean occValue) {
+        occupancyGrid.add(new ArrayList<Boolean>());
 
     }
 }
