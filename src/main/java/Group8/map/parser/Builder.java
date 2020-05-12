@@ -293,20 +293,18 @@ public class Builder
         return this;
     }
 
-
     public GameMap build()
     {
         ScenarioPercepts scenarioPercepts = new ScenarioPercepts(gameMode, this.captureDistance, this.maxRotationAngle,
                 new SlowDownModifiers(this.windowSlowdownModifier, this.doorSlowdownModifier, this.sentrySlowdownModifier),
                 this.pheromoneRadius, this.pheromoneCooldown);
 
-        return new GameMap(new GameSettings(scenarioPercepts, this.width, this.height,
+        return new GameMap(new Group8.map.GameSettings(scenarioPercepts, this.width, this.height,
                 this.guardMaxMoveDistance, this.winRounds, this.intruderMaxMoveDistance, this.intruderMaxSprintDistance,
                 this.sprintCooldown, this.numGuards, this.numIntruders, this.intruderViewRangeNormal, this.intruderViewRangeShaded,
                 this.guardViewRangeNormal, this.guardViewRangeShaded, this.sentryViewRange, this.yellSoundRadius,
                 this.moveMaxSoundRadius, this.windowSoundRadius, this.doorSoundRadius, this.viewAngle, this.viewRays, this.pheromoneExpireRounds)
-        , this.objects);
+                , this.objects);
     }
-
 
 }
