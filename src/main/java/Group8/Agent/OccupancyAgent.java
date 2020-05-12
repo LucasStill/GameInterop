@@ -27,31 +27,25 @@ public class OccupancyAgent implements Guard {
     //I am leaving it incase we want to do some fancy data analytics.
     //private ArrayList<ArrayList<Double>> log_prob_map; //initially set to zero
 
+    //Agent has pose defined by (x,y,theta)
+    private final int DEGREE_OF_FREEDOM = 3;
+    //index 1 is x coordinate, 2 is y coordinate, 3 is robot's heading(theta).
+    private double[] pose = new double[3];
+
+    //some modifiable
     private double alpha = 1.0; //How thick can obstacles be
     private double beta = 5.0 * Math.PI/180; //width of FOV.
     private double z_max = 150.0; //how much info could be stored from the laser
-
-    //Pre-allocate the x and y position of all the grid position on a 2D (might be 3D from the literature) tensor.  (Pre-process = faster)
-    //TODO: copy x and y position into grid_position_m
-    private ArrayList<Double> grid_position_m;
 
     //Log-probabilities to add or remove from the map
     private double log_occ = Math.log(0.65/0.35);
     private double log_free = Math.log(0.35/0.65);
 
     public OccupancyAgent() { }
-//    public OccupancyAgent(double xsize, double ysize, double grid_size) {
-//        this.xsize = xsize;
-//        this.ysize = ysize;
-//        this.grid_size = grid_size;
-//
-//        //pre-allocate grid_position_m
-//        //self.grid_position_m = np.array([np.tile(np.arange(0, self.xsize*self.grid_size, self.grid_size)[:,None], (1, self.ysize)),np.tile(np.arange(0, self.ysize*self.grid_size, self.grid_size)[:,None].T, (self.xsize, 1))])
-//    }
 
     //as defined in https://www.youtube.com/watch?v=Ko7SWZQIawM
 
-
+    //TODO: use Normal number genrator instead of uniform distribution.
 
     /**
      * gets the percept and converts it to free or occupied to a cell..
