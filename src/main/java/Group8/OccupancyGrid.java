@@ -4,23 +4,10 @@ package Group8;
 import java.util.ArrayList;
 
 public class OccupancyGrid {
+    //the higher the value of xsize and ysize the greater the accuracy at cost of complexity.
     private double xsize; //X size of map
     private double ysize; //Y size of map
     private double grid_size;
-    private ArrayList<Double> log_prob_map; //initially set to zero
-
-    private double alpha = 1.0; //How thick can obstacles be
-    private double beta = 5.0 * Math.PI/180; //width of FOV.
-    //TODO: modify beta on how wide the FieldOfView is.
-    private double z_max = 150.0; //how much info could be stored from the laser
-
-    //Pre-allocate the x and y position of all the grid position on a 2D array.  (Pre-process = faster)
-    //TODO: copy x and y position into grid_position_m
-    private ArrayList<Double> grid_position_m;
-
-    //Log-probabilities to add or remove from the map
-    private double log_occ = Math.log(0.65/0.35);
-    private double log_free = Math.log(0.35/0.65);
 
     //OccupancyGrid to be updated by the agent.
     ArrayList<ArrayList<Boolean>> occupancyGrid = new ArrayList<ArrayList<Boolean>>();
