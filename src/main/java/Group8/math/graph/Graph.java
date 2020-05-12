@@ -8,8 +8,8 @@ import java.util.*;
 public class Graph<T> {
 
     private final List<Vertex<T>> vertices = new ArrayList<>();
-    private final Map<Long, Group9.math.graph.Edge<T>> edges = new HashMap<>();
-    private final Map<Integer, List<Group9.math.graph.Edge<T>>> neighbours = new HashMap<>();
+    private final Map<Long, Group8.math.graph.Edge<T>> edges = new HashMap<>();
+    private final Map<Integer, List<Group8.math.graph.Edge<T>>> neighbours = new HashMap<>();
 
     public Graph() {}
 
@@ -27,7 +27,7 @@ public class Graph<T> {
         return this.edges.containsKey(calculateEdgeHash(source, target));
     }
 
-    public Group9.math.graph.Edge<T> get(Vertex<T> source, Vertex<T> target)
+    public Group8.math.graph.Edge<T> get(Vertex<T> source, Vertex<T> target)
     {
         return this.edges.getOrDefault(calculateEdgeHash(source, target), null);
     }
@@ -48,7 +48,7 @@ public class Graph<T> {
 
     public boolean add(Vertex<T> source, Vertex<T> target, double cost, boolean undirected)
     {
-        Group9.math.graph.Edge<T> edge = new Group9.math.graph.Edge<>(source, target, cost);
+        Group8.math.graph.Edge<T> edge = new Group8.math.graph.Edge<>(source, target, cost);
 
         if(has(source, target))
         {
@@ -73,7 +73,7 @@ public class Graph<T> {
         return true;
     }
 
-    public List<Group9.math.graph.Edge<T>> getNeighbours(Vertex<T> source)
+    public List<Group8.math.graph.Edge<T>> getNeighbours(Vertex<T> source)
     {
         return this.neighbours.getOrDefault(source.hashCode(), new ArrayList<>());
     }

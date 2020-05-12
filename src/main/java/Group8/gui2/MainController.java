@@ -1,13 +1,13 @@
 package Group8.gui2;
 
-import Group9.Callback;
-import Group9.Game;
-import Group9.agent.container.GuardContainer;
-import Group9.agent.container.IntruderContainer;
-import Group9.agent.factories.DefaultAgentFactory;
-import Group9.gui2.Gui;
-import Group9.map.dynamic.DynamicObject;
-import Group9.map.parser.Parser;
+import Group8.Callback;
+import Group8.Game;
+import Group8.agent.container.GuardContainer;
+import Group8.agent.container.IntruderContainer;
+import Group8.agent.factories.DefaultAgentFactory;
+import Group8.gui2.Gui;
+import Group8.map.dynamic.DynamicObject;
+import Group8.map.parser.Parser;
 import javafx.animation.AnimationTimer;
 
 import java.io.File;
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 public class MainController implements Runnable {
 
-    private final Group9.gui2.Gui gui;
+    private final Group8.gui2.Gui gui;
     private final Game game;
 
     private AtomicInteger historyViewIndex = new AtomicInteger(-1);

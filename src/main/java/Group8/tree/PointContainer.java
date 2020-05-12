@@ -62,7 +62,7 @@ public abstract class PointContainer {
     public static class Polygon extends PointContainer {
 
         private Vector2[] points;
-        private Group9.tree.PointContainer.Line[] lines;
+        private Group8.tree.PointContainer.Line[] lines;
         private List<Vector2[]> triangles = new ArrayList<>();
 
         private double area = -1;
@@ -75,10 +75,10 @@ public abstract class PointContainer {
             }
 
             this.points = points;
-            this.lines = new Group9.tree.PointContainer.Line[this.points.length];
+            this.lines = new Group8.tree.PointContainer.Line[this.points.length];
             for(int i = 0; i < this.points.length; i++)
             {
-                this.lines[i] = new Group9.tree.PointContainer.Line(this.points[i], this.points[(i + 1) % this.points.length]);
+                this.lines[i] = new Group8.tree.PointContainer.Line(this.points[i], this.points[(i + 1) % this.points.length]);
             }
         }
 
@@ -103,7 +103,7 @@ public abstract class PointContainer {
             return points;
         }
 
-        public Group9.tree.PointContainer.Line[] getLines()
+        public Group8.tree.PointContainer.Line[] getLines()
         {
             return this.lines;
         }
@@ -138,7 +138,7 @@ public abstract class PointContainer {
                                 // TODO In theory we should do a proper check here whether or not the line is actually completely
                                 //  inside the polygon but I am currently not aware of an easy way to do it, so this is only
                                 //  for polygons with 4 points. ^^
-                                Group9.tree.PointContainer.Line _02 = new Group9.tree.PointContainer.Line(a, c);
+                                Group8.tree.PointContainer.Line _02 = new Group8.tree.PointContainer.Line(a, c);
                                 Vector2 randomPoint = new Vector2(_02.getStart().getX(), _02.getStart().getY()).add(
                                         new Vector2.Random().normalise().mul(
                                                 _02.getEnd().getX() - _02.getStart().getX(),
@@ -238,7 +238,7 @@ public abstract class PointContainer {
 
             for(int i = 0; i < this.points.length; i++)
             {
-                this.lines[i] = new Group9.tree.PointContainer.Line(this.points[i], this.points[(i + 1) % this.points.length]);
+                this.lines[i] = new Group8.tree.PointContainer.Line(this.points[i], this.points[(i + 1) % this.points.length]);
             }
         }
 
@@ -267,7 +267,7 @@ public abstract class PointContainer {
 
         @Override
         public Polygon clone() {
-            return new Group9.tree.PointContainer.Polygon(
+            return new Group8.tree.PointContainer.Polygon(
                     Arrays.stream(this.points).map(Vector2::clone).toArray(Vector2[]::new)
             );
         }
@@ -319,8 +319,8 @@ public abstract class PointContainer {
         }
 
         @Override
-        public Group9.tree.PointContainer.Circle clone() {
-            return new Group9.tree.PointContainer.Circle(center.clone(), this.getRadius());
+        public Group8.tree.PointContainer.Circle clone() {
+            return new Group8.tree.PointContainer.Circle(center.clone(), this.getRadius());
         }
 
         @Override
@@ -420,7 +420,7 @@ public abstract class PointContainer {
 
         @Override
         public Line clone() {
-            return new Group9.tree.PointContainer.Line(this.start.clone(), this.end.clone());
+            return new Group8.tree.PointContainer.Line(this.start.clone(), this.end.clone());
         }
     }
 

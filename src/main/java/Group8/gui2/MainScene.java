@@ -1,19 +1,19 @@
 package Group8.gui2;
 
-import Group9.agent.container.AgentContainer;
-import Group9.agent.container.GuardContainer;
-import Group9.agent.container.IntruderContainer;
-import Group9.gui2.GraphicElement;
-import Group9.gui2.Gui;
-import Group9.gui2.GuiSettings;
-import Group9.gui2.MainController;
-import Group9.map.GameMap;
-import Group9.map.dynamic.DynamicObject;
-import Group9.map.dynamic.Pheromone;
-import Group9.map.dynamic.Sound;
-import Group9.map.objects.Window;
-import Group9.map.objects.*;
-import Group9.math.Vector2;
+import Group8.agent.container.AgentContainer;
+import Group8.agent.container.GuardContainer;
+import Group8.agent.container.IntruderContainer;
+import Group8.gui2.GraphicElement;
+import Group8.gui2.Gui;
+import Group8.gui2.GuiSettings;
+import Group8.gui2.MainController;
+import Group8.map.GameMap;
+import Group8.map.dynamic.DynamicObject;
+import Group8.map.dynamic.Pheromone;
+import Group8.map.dynamic.Sound;
+import Group8.map.objects.Window;
+import Group8.map.objects.*;
+import Group8.math.Vector2;
 import Interop.Percept.Vision.FieldOfView;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
@@ -106,7 +106,7 @@ public class MainScene extends Scene {
     private Label historyLabel = new Label("Safe History");
     private CheckBox history = new CheckBox();
     private final GameMap map;
-    private Group9.gui2.Gui gui;
+    private Group8.gui2.Gui gui;
     private FileChooser fileChooser = new FileChooser();
     private boolean hasHistory = false;
     private CheckBox maxSpeed = new CheckBox();
@@ -352,6 +352,7 @@ public class MainScene extends Scene {
                     .mul(1D / mapScale);
 
             MainController.History entry = gui.getMainController().getCurrentHistory();
+            //MainController.History entry = gui.getMainController().getCurrentHistory();
             Optional<IntruderContainer> intruder = entry.intruderContainers.stream()
                     .filter(e -> e.getPosition().distance(scene) < 15).findAny();
             Optional<GuardContainer> guard = entry.guardContainers.stream()
@@ -556,7 +557,7 @@ public class MainScene extends Scene {
             Scene scene = new Scene(root, 720, 360);
             StackPane progressBarHolder = new StackPane();
             ProgressBar progressBar = new ProgressBar(0);
-            File style = new File("./src/main/java/Group9/gui2/style.css");
+            File style = new File("./src/main/java/Group8/gui2/style.css");
             scene.getStylesheets().add(style.toURI().toString());
             stage.setScene(scene);
 
@@ -734,7 +735,7 @@ public class MainScene extends Scene {
         Stage stage = new Stage();
         stage.setTitle("Help");
         Scene scene = new Scene(root, 720, 360);
-        File style = new File("./src/main/java/Group9/gui2/style.css");
+        File style = new File("./src/main/java/Group8/gui2/style.css");
         scene.getStylesheets().add(style.toURI().toString());
         root.getStyleClass().add("video-interface");
         Label helpText = new Label(text);

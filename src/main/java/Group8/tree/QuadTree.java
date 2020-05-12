@@ -6,7 +6,7 @@ import Group8.tree.PointContainer;
 
 public class QuadTree<T> {
 
-    private final Group9.tree.Node<T> root;
+    private final Group8.tree.Node<T> root;
     private final Vector2 translateToTreeOrigin;
     private final Vector2 translateToRealOrigin;
 
@@ -17,7 +17,7 @@ public class QuadTree<T> {
         this.translateToTreeOrigin = new Vector2(-width / 2D, -height / 2D);
         this.translateToRealOrigin = this.translateToTreeOrigin.mul(-1, -1);
 
-        this.root = new Group9.tree.Node<>(new Vector2(0, 0), width, height, 5, maxDepth);
+        this.root = new Group8.tree.Node<>(new Vector2(0, 0), width, height, 5, maxDepth);
         this.transferFunction = transferFunction;
     }
 
@@ -30,7 +30,7 @@ public class QuadTree<T> {
             e.printStackTrace();
         }
         pointContainer.translate(this.translateToTreeOrigin);
-        this.root.add(new Group9.tree.Node.Content<>(value, pointContainer), 1);
+        this.root.add(new Group8.tree.Node.Content<>(value, pointContainer), 1);
     }
 
     public interface TransferFunction<T> {

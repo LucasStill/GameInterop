@@ -22,7 +22,7 @@ public class GameSettings {
     private Distance intruderViewRangeShaded;
     private Distance guardViewRangeNormal;
     private Distance guardViewRangeShaded;
-    private Group9.map.ViewRange sentryViewRange;
+    private Group8.map.ViewRange sentryViewRange;
 
     private Distance yellSoundRadius;
     private Distance moveMaxSoundRadius;
@@ -42,7 +42,7 @@ public class GameSettings {
                         int turnsInTargetAreaToWin, Distance intruderMaxMoveDistance, Distance intruderMaxSprintDistance,
                         int sprintCooldown, int numGuards, int numIntruders, Distance intruderViewRangeNormal,
                         Distance intruderViewRangeShaded, Distance guardViewRangeNormal, Distance guardViewRangeShaded,
-                        Group9.map.ViewRange sentryViewRange, Distance yellSoundRadius, Distance moveMaxSoundRadius,
+                        Group8.map.ViewRange sentryViewRange, Distance yellSoundRadius, Distance moveMaxSoundRadius,
                         Distance windowSoundRadius, Distance doorSoundRadius, Angle viewAngle, int ___viewRays, int pheromoneExpireRounds
     ) {
         this.scenarioPercepts = scenarioPercepts;
