@@ -1,5 +1,6 @@
 package Group8;
 
+
 import java.util.ArrayList;
 
 public class OccupancyGrid {
@@ -24,6 +25,20 @@ public class OccupancyGrid {
     //OccupancyGrid to be updated by the agent.
     ArrayList<ArrayList<Boolean>> occupancyGrid = new ArrayList<ArrayList<Boolean>>();
 
+    public OccupancyGrid() {
+        //instansiate all columns of occupancyGrid
+        for(int i = 0; i <= ysize; i++) {
+            occupancyGrid.add(new ArrayList<Boolean>());
+        }
+
+        //By setting occupancyGrid all to false we assume entire world is empty at instansiation of agent.
+        //TODO: O(n^2) find better way of implementing.
+        for(int i = 0; i <= xsize; i++) {
+            for(int j = 0; j <= ysize; j++){
+                occupancyGrid.get(i).add(i, false);
+            }
+        }
+    }
 
     /**
      * There are only 4 conditional probabilities.
