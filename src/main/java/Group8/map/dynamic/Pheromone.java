@@ -1,8 +1,8 @@
 package Group8.map.dynamic;
 
-import Group9.agent.container.AgentContainer;
-import Group9.map.dynamic.DynamicObject;
-import Group9.math.Vector2;
+import Group8.agent.container.AgentContainer;
+import Group8.map.dynamic.DynamicObject;
+import Group8.math.Vector2;
 import Interop.Percept.Smell.SmellPerceptType;
 
 public class Pheromone extends DynamicObject<AgentContainer<?>> {

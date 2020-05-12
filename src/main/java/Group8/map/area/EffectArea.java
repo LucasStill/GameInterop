@@ -1,9 +1,9 @@
 package Group8.map.area;
 
-import Group9.agent.container.AgentContainer;
-import Group9.map.objects.MapObject;
-import Group9.tree.Container;
-import Group9.tree.PointContainer;
+import Group8.agent.container.AgentContainer;
+import Group8.map.objects.MapObject;
+import Group8.tree.Container;
+import Group8.tree.PointContainer;
 
 public abstract class EffectArea<T> implements Container<PointContainer> {
 

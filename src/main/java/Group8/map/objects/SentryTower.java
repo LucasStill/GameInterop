@@ -1,10 +1,10 @@
 package Group8.map.objects;
 
-import Group9.map.ViewRange;
-import Group9.map.area.ModifySpeedEffect;
-import Group9.map.area.ModifyViewRangeEffect;
-import Group9.map.objects.MapObject;
-import Group9.tree.PointContainer;
+import Group8.map.ViewRange;
+import Group8.map.area.ModifySpeedEffect;
+import Group8.map.area.ModifyViewRangeEffect;
+import Group8.map.objects.MapObject;
+import Group8.tree.PointContainer;
 import Interop.Percept.Vision.ObjectPerceptType;
 
 public class SentryTower extends MapObject {

@@ -1,9 +1,9 @@
 package Group8.map.parser;
 
-import Group9.map.GameMap;
-import Group9.map.parser.Builder;
-import Group9.math.Vector2;
-import Group9.tree.PointContainer;
+import Group8.map.GameMap;
+import Group8.map.parser.Builder;
+import Group8.math.Vector2;
+import Group8.tree.PointContainer;
 import Interop.Percept.Scenario.GameMode;
 
 import java.io.IOException;

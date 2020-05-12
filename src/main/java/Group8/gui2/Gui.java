@@ -1,11 +1,11 @@
 package Group8.gui2;
 
-import Group9.agent.container.GuardContainer;
-import Group9.agent.container.IntruderContainer;
-import Group9.gui2.GuiSettings;
-import Group9.gui2.MainController;
-import Group9.gui2.MainScene;
-import Group9.map.dynamic.DynamicObject;
+import Group8.agent.container.GuardContainer;
+import Group8.agent.container.IntruderContainer;
+import Group8.gui2.GuiSettings;
+import Group8.gui2.MainController;
+import Group8.gui2.MainScene;
+import Group8.map.dynamic.DynamicObject;
 import javafx.application.Application;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;

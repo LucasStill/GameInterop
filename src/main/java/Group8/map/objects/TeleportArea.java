@@ -1,10 +1,10 @@
 package Group8.map.objects;
 
-import Group9.agent.container.AgentContainer;
-import Group9.map.area.ModifyLocationEffect;
-import Group9.map.objects.MapObject;
-import Group9.math.Vector2;
-import Group9.tree.PointContainer;
+import Group8.agent.container.AgentContainer;
+import Group8.map.area.ModifyLocationEffect;
+import Group8.map.objects.MapObject;
+import Group8.math.Vector2;
+import Group8.tree.PointContainer;
 import Interop.Percept.Vision.ObjectPerceptType;
 
 import java.util.ArrayList;

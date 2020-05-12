@@ -1,13 +1,13 @@
 package Group8.tree;
 
-import Group9.Game;
-import Group9.math.Vector2;
+import Group8.Game;
+import Group8.math.Vector2;
 
 import java.util.*;
 import java.util.function.Function;
 
-import static Group9.PiMath.geq;
-import static Group9.PiMath.leq;
+import static Group8.PiMath.geq;
+import static Group8.PiMath.leq;
 
 public abstract class PointContainer {
 

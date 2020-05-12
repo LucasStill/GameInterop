@@ -1,4 +1,4 @@
-package Group8.agent;
+package Group8.agent.phase1;
 
 import Group8.Controller.G8Launcher;
 import Group8.Controller.Utils.Scenario;

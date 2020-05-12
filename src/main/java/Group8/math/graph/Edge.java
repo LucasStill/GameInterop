@@ -1,6 +1,6 @@
 package Group8.math.graph;
 
-import Group9.math.graph.Vertex;
+import Group8.math.graph.Vertex;
 
 public class Edge<T> {
 

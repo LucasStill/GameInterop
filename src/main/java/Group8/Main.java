@@ -1,7 +1,7 @@
 package Group8;
 
-import Group9.agent.factories.DefaultAgentFactory;
-import Group9.map.parser.Parser;
+import Group8.agent.factories.DefaultAgentFactory;
+import Group8.map.parser.Parser;
 
 
 public class Main {

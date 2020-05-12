@@ -1,6 +1,7 @@
-package Group8.agent;
+package Group8.agent.phase1;
 
 import Group8.Controller.Utils.GuardInfo;
+import Group8.agent.phase1.Agent;
 import Interop.Action.*;
 import Interop.Agent.Guard;
 import Interop.Geometry.Angle;

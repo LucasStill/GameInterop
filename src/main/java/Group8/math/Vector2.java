@@ -1,6 +1,6 @@
 package Group8.math;
 
-import Group9.Game;
+import Group8.Game;
 import Interop.Geometry.Point;
 import Interop.Utils.Utils;
 

@@ -1,8 +1,8 @@
 package Group8.map.objects;
 
-import Group9.map.area.ModifyViewEffect;
-import Group9.map.objects.MapObject;
-import Group9.tree.PointContainer;
+import Group8.map.area.ModifyViewEffect;
+import Group8.map.objects.MapObject;
+import Group8.tree.PointContainer;
 import Interop.Percept.Vision.ObjectPerceptType;
 
 public class ShadedArea extends MapObject {

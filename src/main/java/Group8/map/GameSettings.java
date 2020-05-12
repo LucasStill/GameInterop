@@ -1,6 +1,6 @@
 package Group8.map;
 
-import Group9.map.ViewRange;
+import Group8.map.ViewRange;
 import Interop.Geometry.Angle;
 import Interop.Geometry.Distance;
 import Interop.Percept.Scenario.ScenarioPercepts;

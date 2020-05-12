@@ -1,4 +1,4 @@
-package Group8.agent;
+package Group8.agent.phase1;
 
 import Interop.Agent.Guard;
 import Interop.Agent.Intruder;

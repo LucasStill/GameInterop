@@ -1,7 +1,7 @@
 package Group8.map.area;
 
-import Group9.agent.container.AgentContainer;
-import Group9.map.area.EffectArea;
+import Group8.agent.container.AgentContainer;
+import Group8.map.area.EffectArea;
 
 public class NoModify extends EffectArea<Double> {
 

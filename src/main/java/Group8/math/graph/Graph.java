@@ -1,7 +1,7 @@
 package Group8.math.graph;
 
-import Group9.math.graph.Edge;
-import Group9.math.graph.Vertex;
+import Group8.math.graph.Edge;
+import Group8.math.graph.Vertex;
 
 import java.util.*;
 

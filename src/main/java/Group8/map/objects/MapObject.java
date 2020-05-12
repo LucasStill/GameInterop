@@ -1,8 +1,8 @@
 package Group8.map.objects;
 
-import Group9.map.area.EffectArea;
-import Group9.tree.Container;
-import Group9.tree.PointContainer;
+import Group8.map.area.EffectArea;
+import Group8.tree.Container;
+import Group8.tree.PointContainer;
 import Interop.Percept.Vision.ObjectPerceptType;
 
 import java.util.ArrayList;

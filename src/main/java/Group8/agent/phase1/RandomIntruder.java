@@ -1,6 +1,7 @@
-package Group8.agent;
+package Group8.agent.phase1;
 
 import Group8.Controller.Utils.IntruderInfo;
+import Group8.agent.phase1.Agent;
 import Interop.Action.IntruderAction;
 import Interop.Action.Move;
 import Interop.Action.Rotate;
