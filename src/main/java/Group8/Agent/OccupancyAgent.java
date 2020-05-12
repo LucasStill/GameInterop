@@ -1,7 +1,5 @@
 package Group8.Agent;
 
-import Group8.Controller.Utils.Area;
-import Group8.Controller.Utils.Scenario;
 import Interop.Action.GuardAction;
 import Interop.Agent.Guard;
 import Interop.Percept.GuardPercepts;
