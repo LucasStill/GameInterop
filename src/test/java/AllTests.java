@@ -46,17 +46,8 @@ public class AllTests extends SimpleUnitTest {
 
     private static void testAgentFactories() {
         System.out.println("\n\n\nAgentsFactory:\n");
-        testAgentsFactory(Group1.AgentsFactory.class);
-        testAgentsFactory(Group2.AgentsFactory.class);
-        testAgentsFactory(Group3.AgentsFactory.class);
-        testAgentsFactory(Group4.AgentsFactory.class);
-        testAgentsFactory(Group5.AgentsFactory.class);
-        testAgentsFactory(Group6.AgentsFactory.class);
-        testAgentsFactory(Group7.AgentsFactory.class);
         testAgentsFactory(Group8.AgentsFactory.class);
         testAgentsFactory(Group9.AgentsFactory.class);
-        testAgentsFactory(Group10.AgentsFactory.class);
-        testAgentsFactory(Group11.AgentsFactory.class);
     }
 
     public static void testAgentsFactory(Class<?> factoryClass) {
