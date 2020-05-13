@@ -1,8 +1,16 @@
 package Group8.agent;
 
+import Group8.Game;
+import Interop.Action.DropPheromone;
 import Interop.Action.GuardAction;
+import Interop.Action.Move;
+import Interop.Action.Rotate;
 import Interop.Agent.Guard;
+import Interop.Geometry.Angle;
+import Interop.Geometry.Distance;
 import Interop.Percept.GuardPercepts;
+import Interop.Percept.Scenario.SlowDownModifiers;
+import Interop.Percept.Smell.SmellPerceptType;
 
 /**
  * @author Thomas Sijpkens
@@ -31,18 +39,15 @@ public class OccupancyAgent implements Guard {
     private double log_occ = Math.log(0.65/0.35);
     private double log_free = Math.log(0.35/0.65);
 
-    public OccupancyAgent() { }
+    private GuardPercepts percepts;
+
+    public OccupancyAgent() {
+        OccupancyGrid occupancyGrid = new OccupancyGrid();
+    }
 
     //as defined in https://www.youtube.com/watch?v=Ko7SWZQIawM
 
     //TODO: use Normal number genrator instead of uniform distribution.
-
-    /**
-     * gets the percept and converts it to free or occupied to a cell..
-     */
-    public void visionMeasure(){
-
-    }
 
     /**
      * @return an optimal estimate of the state of a acell given by a MAP decision rule
@@ -66,8 +71,73 @@ public class OccupancyAgent implements Guard {
 
     }
 
+    private double getSpeedModifier(GuardPercepts guardPercepts)
+    {
+        SlowDownModifiers slowDownModifiers =  guardPercepts.getScenarioGuardPercepts().getScenarioPercepts().getSlowDownModifiers();
+        if(guardPercepts.getAreaPercepts().isInWindow())
+        {
+            return slowDownModifiers.getInWindow();
+        }
+        else if(guardPercepts.getAreaPercepts().isInSentryTower())
+        {
+            return slowDownModifiers.getInSentryTower();
+        }
+        else if(guardPercepts.getAreaPercepts().isInDoor())
+        {
+            return slowDownModifiers.getInDoor();
+        }
+
+        return 1;
+    }
+
     @Override
     public GuardAction getAction(GuardPercepts percepts) {
-        return null;
+        if(!percepts.wasLastActionExecuted())
+        {
+            if(Math.random() < 0.1)
+            {
+                return new DropPheromone(SmellPerceptType.values()[(int) (Math.random() * SmellPerceptType.values().length)]);
+            }
+            return new Rotate(Angle.fromRadians(percepts.getScenarioGuardPercepts().getScenarioPercepts().getMaxRotationAngle().getRadians() * Game._RANDOM.nextDouble()));
+        }
+        else
+        {
+            return new Move(new Distance(percepts.getScenarioGuardPercepts().getMaxMoveDistanceGuard().getValue() * getSpeedModifier(percepts)));
+        }
     }
+
+    /**
+     * There are only 4 conditional probabilities.
+     * P(z = 1|Mx,y = 1) : True occupied measurement
+     * P(z = 0|Mx,y = 1) : False free measurement
+     * P(z = 1|Mx,y = 0) : False occupied measurement
+     * P(z = 0|Mx,y = 0) : True free measurement
+     */
+    public void conditionalProbabilities() {
+        //recall: P(A^c|B) = 1 - P(A | B)
+    }
+
+    /**
+     * Converts our Prior Map to Posterior map using Bayes formula:
+     * P(Mx,y | z) = (P(z | Mx,y) * P(Mx,y)) / P(z)
+     */
+    public void posteriorMap(GuardPercepts percepts){
+        Distance distanceToNearestObject = percepts.getVision().getFieldOfView().getRange();
+        Angle directionFacing = percepts.getVision().getFieldOfView().getViewAngle();
+    }
+
+    /**
+     * a binary random variable (0,1) with Mx,y:{free, occupied} -> {0,1}https://www.youtube.com/watch?v=Ko7SWZQIawM
+     * Given some probability sapce (theta, P) a R.V. X: theta -> R is a function that maps the sample space to the reals.
+     */
+    public void Occupancy() {
+
+    }
+
+    /**
+     * fine-grained grid map where an occupancy variable associated with each cell.
+     * i.e. it is just an array of probability using Occupancy() Mx,y
+     * Requires Bayesian filtering to maintain a occupancy grid map.
+     *  Recursively update p(Mx,My) for each cell
+     */
 }
