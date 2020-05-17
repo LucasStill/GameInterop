@@ -18,19 +18,22 @@ public class OccupancyGrid {
 
     public OccupancyGrid() {
         //instansiate all columns of occupancyGrid
-        for(int i = 0; i <= ysize; i++) {
+        for(int i = 0; i < ysize; i++) {
             occupancyGrid.add(new ArrayList<Boolean>());
             logMap.add(new ArrayList<Double>());
         }
 
+       // System.out.println("Size of ArrayList is: " + xsize);
+       // System.out.println("ArrayList: " + occupancyGrid);
+
         //By setting occupancyGrid all to false we assume entire world is empty at instansiation of agent.
         //pre-allocation is faster in the long run
         //TODO: O(n^2) find better way of implementing.
-        for(int i = 0; i <= xsize; i++) {
-            for(int j = 0; j <= ysize; j++){
-                occupancyGrid.get(i).add(i, false);
+        for(int i = 0; i < ysize; i++) {
+            for(int j = 0; j < xsize; j++){
+                occupancyGrid.get(i).add(j, false);
                 //Equal change of being empty and occupied
-                logMap.get(i).add(i, 0.5);
+                logMap.get(i).add(j, 0.5);
             }
         }
     }
